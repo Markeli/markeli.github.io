@@ -1,6 +1,6 @@
 # markeli.github.io
 
-Personal blog built with [Astro](https://astro.build), deployed to GitHub Pages on every push to `main`.
+Max Markelow's blog at [markeli.github.io](https://markeli.github.io), deployed to GitHub Pages on every push to `main`.
 
 ## Writing a post
 
@@ -34,7 +34,7 @@ Personal blog built with [Astro](https://astro.build), deployed to GitHub Pages 
 
 ## Search
 
-[Pagefind](https://pagefind.app) indexes the built HTML after `astro build` (only post bodies, marked with
+[Pagefind](https://pagefind.app) indexes the built HTML after the build (only post bodies, marked with
 `data-pagefind-body`). Open it with the search button or `⌘K` / `Ctrl+K`. The index doesn't exist in `npm run dev`.
 
 ## Comments
