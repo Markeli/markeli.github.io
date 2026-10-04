@@ -42,3 +42,4 @@ Personal blog built with [Astro](https://astro.build), deployed to GitHub Pages 
 Comments use [giscus](https://giscus.app) backed by this repo's Discussions (category `Announcements`, so only
 giscus and the owner can open threads). The [giscus app](https://github.com/apps/giscus) must be installed on the repo.
 Settings live in `GISCUS` in `src/consts.ts`.
+`giscus.json` restricts which sites may embed the comments — add any new domain there.
