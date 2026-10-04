@@ -8,6 +8,11 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://markeli.github.io',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		shikiConfig: {
+			themes: { light: 'github-light', dark: 'github-dark' },
+		},
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),
