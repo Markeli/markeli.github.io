@@ -1,0 +1,19 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getAllTags } from '../../lib/posts';
+
+const tags = await getAllTags();
+---
+
+<Page title="Tags" description="Posts by topic.">
+	<h1>Tags</h1>
+	{tags.length === 0 ? <p>No tags yet.</p> : (
+		<ul>
+			{tags.map((tag) => (
+				<li>
+					<a href={`/tags/${tag}/`}>#{tag}</a>
+				</li>
+			))}
+		</ul>
+	)}
+</Page>

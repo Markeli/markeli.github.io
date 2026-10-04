@@ -1,0 +1,19 @@
+---
+import PostList from '../components/PostList.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Page from '../layouts/Page.astro';
+import { getPublishedPosts } from '../lib/posts';
+
+const recentPosts = (await getPublishedPosts()).slice(0, 5);
+---
+
+<Page title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<h1>Hi, I'm Maxim</h1>
+	<p>
+		Engineering Manager at Mindbox, running security and the .NET platform. I write about building teams,
+		treating security as engineering, and the .NET stuff I keep running into. More <a href="/about">about me</a>.
+	</p>
+	<h2>Recent posts</h2>
+	<PostList posts={recentPosts} />
+	<p><a href="/blog">All posts →</a></p>
+</Page>
