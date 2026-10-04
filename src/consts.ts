@@ -1,6 +1,6 @@
-export const SITE_TITLE = 'Maxim Markelow';
+export const SITE_TITLE = 'Max Markelow';
 export const SITE_DESCRIPTION = 'Notes on engineering management, security and .NET platforms.';
-export const AUTHOR = 'Maxim Markelow';
+export const AUTHOR = 'Max Markelow';
 
 export const SOCIAL_LINKS = {
 	github: 'https://github.com/Markeli',

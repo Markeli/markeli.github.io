@@ -6,7 +6,7 @@ description: Who writes this blog.
 
 # About
 
-I'm Maxim Markelow, Engineering Manager for Security & .NET Platform at [Mindbox](https://mindbox.cloud),
+I'm Max Markelow, Engineering Manager for Security & .NET Platform at [Mindbox](https://mindbox.cloud),
 a B2B customer data platform.
 
 I first ran the internal .NET platform tribe there: we cut the monolith's time-to-market from 12 to ~4 hours
