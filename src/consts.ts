@@ -7,10 +7,10 @@ export const SOCIAL_LINKS = {
 	linkedin: 'https://www.linkedin.com/in/maxim-markelow-a24573123/',
 };
 
-// Fill in after enabling Discussions on the repo: https://giscus.app
+// Comments are stored in this repo's Discussions; the giscus GitHub App must be installed on the repo.
 export const GISCUS = {
 	repo: 'Markeli/Markeli.github.io',
-	repoId: '',
-	category: 'Comments',
-	categoryId: '',
+	repoId: 'R_kgDOU7Y2tQ',
+	category: 'Announcements',
+	categoryId: 'DIC_kwDOU7Y2tc4DHBLX',
 };
