@@ -162,8 +162,14 @@ COPY CLAUDE.md /etc/claude-code/CLAUDE.md
 
 ```json
 {
-	"attribution": { "commit": "Co-authored-by: Maxim Markelow <markelow.dev@gmail.com>", "pr": "" },
-	"enabledPlugins": { "superpowers@claude-plugins-official": true, "csharp-lsp@claude-plugins-official": true },
+	"attribution": {
+		"commit": "Co-authored-by: Maxim Markelow <markelow.dev@gmail.com>",
+		"pr": ""
+	},
+	"enabledPlugins": {
+		"superpowers@claude-plugins-official": true,
+		"csharp-lsp@claude-plugins-official": true
+	},
 	"env": { "ENABLE_CLAUDEAI_MCP_SERVERS": "false" }
 }
 ```
@@ -233,7 +239,7 @@ I tested it on a real repository: the bot in the sandbox created a branch, commi
 left a general comment and an inline comment; the bot read both and replied in their threads as `markeli-agent`. GitHub
 linked the co-author to my account.
 
-## Gotchas I hit
+## Pitfalls I hit
 
 1. **sbx copies your git identity into the sandbox.** In `~/.gitconfig` it overrides `/etc/gitconfig`. There's no
    setting to turn it off; only environment variables in the image help.
@@ -278,6 +284,10 @@ linked the co-author to my account.
 - **Updates mean recreating.** A new image, a kit change or a different set of mounts only applies to a new sandbox.
   Pulling a fresh template doesn't touch existing ones, so you `sbx rm` and create again. Everything inside the VM goes
   with it: installed packages, caches, Docker images and the agent's session history. Push your branches first.
+- **IDE integration is still murky.** Docker documents VS Code and Cursor through Remote-SSH: the editor stays on the
+  host while files, terminals and extensions run inside the sandbox. I haven't tried it yet, JetBrains IDEs aren't
+  covered, and in clone mode your host IDE doesn't see the agent's work until you `git fetch sandbox-<name>`. The
+  comfortable "the agent edits, I watch the diff in my IDE" loop needs rethinking.
 - **Your own PRs need a bypass.**
 - **A lot is experimental:** custom secrets, kits, shared skills. Things may change between `sbx` releases.
 
