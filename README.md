@@ -29,8 +29,13 @@ Personal blog built with [Astro](https://astro.build), deployed to GitHub Pages 
 | :---------------- | :-------------------------------------- |
 | `npm install`     | Install dependencies                    |
 | `npm run dev`     | Dev server at `localhost:4321` (drafts shown) |
-| `npm run build`   | Production build to `./dist/`           |
-| `npm run preview` | Serve the production build locally      |
+| `npm run build`   | Production build to `./dist/` + Pagefind search index |
+| `npm run preview` | Serve the production build locally (search works only here) |
+
+## Search
+
+[Pagefind](https://pagefind.app) indexes the built HTML after `astro build` (only post bodies, marked with
+`data-pagefind-body`). Open it with the search button or `⌘K` / `Ctrl+K`. The index doesn't exist in `npm run dev`.
 
 ## Comments
 

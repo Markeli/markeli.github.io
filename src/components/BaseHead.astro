@@ -17,6 +17,20 @@ const { title, description, image, type = 'website' } = Astro.props;
 ---
 
 <meta charset="utf-8" />
+<script is:inline>
+	// Runs before first paint to avoid a flash of the wrong theme.
+	(() => {
+		let theme;
+		try {
+			theme = localStorage.getItem('theme');
+		} catch {}
+		if (theme !== 'light' && theme !== 'dark') {
+			theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+		document.documentElement.dataset.theme = theme;
+		document.documentElement.dataset.pfTheme = theme;
+	})();
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico" />
