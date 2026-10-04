@@ -8,7 +8,12 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/" class="brand">
+				<img src="/favicon.svg" alt="" width="28" height="28" />
+				{SITE_TITLE}
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/tags">Tags</HeaderLink>
@@ -38,6 +43,14 @@ import ThemeToggle from './ThemeToggle.astro';
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+	.brand img {
+		border-radius: 6px;
 	}
 	nav {
 		display: flex;

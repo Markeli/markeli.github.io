@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import { Font } from 'astro:assets';
+import Logo from '../assets/logo.png';
 import { AUTHOR, SITE_TITLE } from '../consts';
 
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image, type = 'website' } = Astro.props;
+const ogImage = image ?? Logo;
 ---
 
 <meta charset="utf-8" />
@@ -33,7 +35,8 @@ const { title, description, image, type = 'website' } = Astro.props;
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
 <meta name="generator" content={Astro.generator} />
@@ -51,6 +54,6 @@ const { title, description, image, type = 'website' } = Astro.props;
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{image && <meta property="og:image" content={new URL(image.src, Astro.site)} />}
+<meta property="og:image" content={new URL(ogImage.src, Astro.site)} />
 
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
