@@ -19,19 +19,25 @@ export default defineConfig({
 	fonts: [
 		{
 			provider: fontProviders.local(),
-			name: 'Atkinson',
-			cssVariable: '--font-atkinson',
-			fallbacks: ['sans-serif'],
+			name: 'JetBrains Mono',
+			cssVariable: '--font-mono',
+			fallbacks: ['monospace'],
 			options: {
 				variants: [
 					{
-						src: ['./src/assets/fonts/atkinson-regular.woff'],
+						src: ['./src/assets/fonts/jetbrains-mono-400-normal.woff2'],
 						weight: 400,
 						style: 'normal',
 						display: 'swap',
 					},
 					{
-						src: ['./src/assets/fonts/atkinson-bold.woff'],
+						src: ['./src/assets/fonts/jetbrains-mono-400-italic.woff2'],
+						weight: 400,
+						style: 'italic',
+						display: 'swap',
+					},
+					{
+						src: ['./src/assets/fonts/jetbrains-mono-700-normal.woff2'],
 						weight: 700,
 						style: 'normal',
 						display: 'swap',
