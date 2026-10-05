@@ -299,14 +299,6 @@ linked the co-author to my account.
 - **A Docker account is required** (`sbx login`).
 - **Pushes over SSH only** when the token is a custom secret.
 
-## Links
-
-- Repository with the image, kit and script: [Markeli/ai-agents-tooling](https://github.com/Markeli/ai-agents-tooling)
-- Discuss PR with my agent:
-  [Markeli/ai-agents-tooling/pull/2](https://github.com/Markeli/ai-agents-tooling/pull/2)
-- [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/), [kits v2](https://docs.docker.com/ai/sandboxes/customize/kits-v2/),
-  [credentials](https://docs.docker.com/ai/sandboxes/configuration/credentials/)
-
 ## What's next
 
 Agents are becoming team members, not IDE plugins. A team member needs their own account, their own permissions and
@@ -319,3 +311,11 @@ whose permissions you control explicitly and which can never have more than you 
 That would change the whole model of authentication and authorization the industry has been building for decades,
 where an account is a person and a token is that person. Until it happens, a separate account per agent is the
 practical way to get most of it today.
+
+## Links
+
+- Repository with the image, kit and script: [Markeli/ai-agents-tooling](https://github.com/Markeli/ai-agents-tooling)
+- Discuss PR with my agent:
+  [Markeli/ai-agents-tooling/pull/2](https://github.com/Markeli/ai-agents-tooling/pull/2)
+- [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/), [kits v2](https://docs.docker.com/ai/sandboxes/customize/kits-v2/),
+  [credentials](https://docs.docker.com/ai/sandboxes/configuration/credentials/)
