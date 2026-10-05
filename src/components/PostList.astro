@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { readingTime } from '../lib/posts';
 import FormattedDate from './FormattedDate.astro';
 import TagList from './TagList.astro';
 
@@ -22,7 +23,7 @@ const { posts } = Astro.props;
 						{post.data.draft && <span class="draft">[draft]</span>}
 					</a>
 					<p class="meta">
-						<FormattedDate date={post.data.pubDate} />
+						<FormattedDate date={post.data.pubDate} /> · {readingTime(post.body)} min read
 					</p>
 					<p class="description">{post.data.description}</p>
 					<TagList tags={post.data.tags} />
