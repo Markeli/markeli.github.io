@@ -2,6 +2,7 @@
 title: You Become Responsible, Forever, for What You Have Launched
 description: Why a coding agent should work under its own account instead of yours, and how I put Claude Code in a Docker Sandbox as the markeli-agent bot.
 pubDate: 2026-10-04
+updatedDate: 2026-11-02
 tags: [ai-agents, claude-code, security, github, gitlab, docker]
 draft: false
 ---
@@ -131,6 +132,13 @@ The fix is to move the agent into a sandbox where your credentials simply don't 
 ## My setup
 
 Everything lives in [Markeli/ai-agents-tooling](https://github.com/Markeli/ai-agents-tooling):
+
+> **Update, 2026-11-02:** the launcher is no longer a bash script. It is now `agent-sandbox`, a .NET global tool in
+> [`sandbox/cli`](https://github.com/Markeli/ai-agents-tooling/tree/main/sandbox/cli) with the kit embedded, so its
+> logic is covered by tests and it can grow Windows support. Install it once from a checkout with
+> `cd sandbox/cli && dotnet tool restore && dotnet cake --target=Install`; the commands below stay the same. The
+> script this post describes is kept at the
+> [`agent-sandbox-bash`](https://github.com/Markeli/ai-agents-tooling/tree/agent-sandbox-bash/sandbox) tag.
 
 ```text
 sandbox/
@@ -314,7 +322,9 @@ practical way to get most of it today.
 
 ## Links
 
-- Repository with the image, kit and script: [Markeli/ai-agents-tooling](https://github.com/Markeli/ai-agents-tooling)
+- Repository with the image, kit and launcher: [Markeli/ai-agents-tooling](https://github.com/Markeli/ai-agents-tooling)
+- The bash launcher from this post:
+  [`agent-sandbox-bash`](https://github.com/Markeli/ai-agents-tooling/blob/agent-sandbox-bash/sandbox/bin/agent-sandbox)
 - Discuss PR with my agent:
   [Markeli/ai-agents-tooling/pull/2](https://github.com/Markeli/ai-agents-tooling/pull/2)
 - [Docker Sandboxes](https://docs.docker.com/ai/sandboxes/), [kits v2](https://docs.docker.com/ai/sandboxes/customize/kits-v2/),
